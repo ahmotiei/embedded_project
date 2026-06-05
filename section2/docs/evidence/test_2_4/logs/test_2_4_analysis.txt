@@ -1,0 +1,55 @@
+TEST 2-4 NETWORK RECOVERY ANALYSIS
+
+Configuration:
+  Initial connected period: 30 seconds
+  Forced network disconnection: 120 seconds
+  Total recording period: approximately 240 seconds
+  Sampling interval: 5 seconds
+  Workload: continuous MJPEG stream
+
+Recorded samples:
+  Data samples: 49
+  First sample time: 0 seconds
+  Last sample time: 244 seconds
+
+Local API availability:
+  Reachable samples: 49
+  Unreachable samples: 0
+
+Camera connection:
+  Connected samples: 24
+  Disconnected samples: 25
+  First detected disconnection: 35 seconds
+  First detected reconnection: 163 seconds
+  Observed camera outage: 128 seconds
+
+Temperature telemetry:
+  Stale samples: 22
+  Non-stale samples: 27
+
+Journal events:
+  Host camera disconnected: 2026-07-27T22:45:10+0330
+  Host camera connected:    2026-07-27T22:47:18+0330
+  Journal disconnect-to-connect interval: 128 seconds
+
+Final state:
+  Web service: active
+  Camera connected: true
+  Last frame age: 0.021 seconds
+  CPU temperature: 49 C
+  Temperature stale: false
+
+Conclusion:
+  The local REST API remained available while the VM network
+  interface was disconnected.
+
+  Communication between the physical Host agent and the VM was
+  interrupted, causing the camera connection to be reported as
+  disconnected and temperature data to become stale as expected.
+
+  After restoring the VM network interface, the Host agent and
+  camera connection recovered automatically without restarting
+  the Web service or the VM.
+
+  Continuous streaming resumed with a fresh frame age, and
+  temperature telemetry returned to a non-stale state.

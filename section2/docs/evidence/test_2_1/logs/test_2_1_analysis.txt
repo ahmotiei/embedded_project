@@ -1,0 +1,25 @@
+TEST 2-1 TEMPERATURE ANALYSIS
+
+Idle:
+  Minimum: 53 C
+  Average: 56.00 C
+  Maximum: 61 C
+
+Stream only:
+  Minimum: 49 C
+  Average: 53.36 C
+  Maximum: 78 C
+  The maximum occurred only at t=0.
+  The next sample was 50 C and most later samples were 49-51 C.
+  Therefore, 78 C was a transient startup observation and not
+  a sustained thermal condition.
+
+Stream + detection:
+  Minimum: 51 C
+  Average: 52.91 C
+  Maximum: 58 C
+
+Conclusion:
+  No sustained overheating was observed.
+  Temperature telemetry remained available and non-stale.
+  The raw 78 C sample was retained without modification.

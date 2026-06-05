@@ -1,0 +1,32 @@
+=== TEST 2-1C: STREAM + DETECTION END STATE ===
+2026-07-27T21:24:14+03:30
+
+Vision service:
+active
+
+Active stream client count:
+1
+
+Stream client:
+    PID     ELAPSED CMD
+   1317       06:07 curl -sk --no-buffer https://127.0.0.1:8443/api/v1/stream -o /dev/null
+
+CSV line count:
+12 evidence/test_2_1_temperature/stream_detection.csv
+
+Last four samples:
+"211","2026-07-27T21:22:14+0330",58,11.795,1034820,1,true
+"241","2026-07-27T21:22:44+0330",52,14.925,1032784,1,true
+"271","2026-07-27T21:23:14+0330",51,19.249,1037496,1,true
+"301","2026-07-27T21:23:44+0330",51,15.686,1033484,1,true
+
+Final telemetry:
+{
+  "cpu_temperature_c": 59,
+  "cpu_temperature_stale": false,
+  "temperature_source": "host_sysfs_udp",
+  "cpu_usage_percent": 12.935,
+  "persons": 1,
+  "camera_connected": true,
+  "last_frame_age_seconds": 0.006
+}

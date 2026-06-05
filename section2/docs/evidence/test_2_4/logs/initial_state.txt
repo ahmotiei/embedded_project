@@ -1,0 +1,27 @@
+=== TEST 2-4: INITIAL STATE ===
+2026-07-27T22:44:37+03:30
+
+Web service:
+active
+
+Swagger service:
+active
+
+Vision service:
+inactive
+
+Stream client:
+    PID     ELAPSED CMD
+   9017       00:03 curl -sk --no-buffer https://127.0.0.1:8443/api/v1/stream -o /dev/null
+
+Active stream client count:
+1
+
+Initial telemetry:
+{
+  "timestamp": "2026-07-27T22:44:36+0330",
+  "camera_connected": true,
+  "last_frame_age_seconds": 0.02,
+  "cpu_temperature_c": 51,
+  "cpu_temperature_stale": false
+}

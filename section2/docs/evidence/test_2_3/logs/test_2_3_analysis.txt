@@ -1,0 +1,67 @@
+TEST 2-3 CONCURRENT TELEMETRY LOAD ANALYSIS
+
+Configuration:
+  Concurrent curl loops: 50
+  Duration: 30 seconds
+  Endpoint: GET /api/v1/telemetry
+
+Worker verification:
+  Unique workers: 50
+  Minimum requests per worker: 19
+  Maximum requests per worker: 20
+  Missing workers: none
+
+Request results:
+  Total requests: 966
+  Successful HTTP 200: 966
+  Failed requests: 0
+  Success rate: 100.00 percent
+  Approximate throughput: 32.20 requests/second
+
+Latency:
+  Baseline mean: 32.040 ms
+  Load mean: 1542.485 ms
+  Load P50: 1568.356 ms
+  Load P95: 1598.459 ms
+  Load P99: 1634.513 ms
+  Mean latency increase: 1510.446 ms
+  Relative latency increase: 4714.294 percent
+
+CPU usage:
+  Initial: 24.623 percent
+  Final: 58.794 percent
+  Average: 58.883 percent
+  Maximum: 64.356 percent
+  Initial-to-final change: 34.171 percentage points
+
+Available memory:
+  Initial: 1084120 KB
+  Final: 952848 KB
+  Minimum: 912660 KB
+  Net change: -131272 KB
+  Net change: -128.20 MiB
+
+CPU temperature:
+  Initial: 52 C
+  Final: 88 C
+  Average: 85.46 C
+  Maximum: 94 C
+  Initial-to-final change: 36 C
+
+Telemetry sampling:
+  Samples: 13
+  Observed interval: 0 to 30 seconds
+
+Conclusion:
+  All 50 concurrent workers participated and all requests
+  returned HTTP 200. The API remained functionally available.
+
+  Response latency increased substantially under load. CPU usage
+  and temperature increased, while available memory decreased.
+
+  The maximum recorded temperature was 94 C. The raw measurement
+  was retained without modification.
+
+  The telemetry sampler also used the loaded endpoint. Therefore,
+  increased response latency reduced the number of samples that
+  could be collected during the 30-second interval.
