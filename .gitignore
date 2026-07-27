@@ -1,0 +1,19 @@
+# Build files
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Runtime
+*.log
+
+# Temporary archives
+*.tar.gz
+
+# OS files
+.DS_Store

@@ -1,0 +1,17 @@
+========================================
+SMART GUARD - TEST 1-5
+SELF-SIGNED CERTIFICATE AND CN
+========================================
+
+Test timestamp:
+2026-07-27T14:26:43+03:30
+
+Certificate presented by HTTPS server:
+subject=CN=401102553
+issuer=CN=401102553
+serial=53E10EA266957AAF7FE25C92BF5152EF1D341E87
+notBefore=Jul 25 11:56:39 2026 GMT
+notAfter=Jul 22 11:56:39 2036 GMT
+sha256 Fingerprint=A2:66:E7:34:25:DF:49:06:C1:81:35:3C:79:AA:74:7B:A0:52:A0:B2:B0:92:7B:2F:22:7A:7B:C6:DF:97:A8:9E
+X509v3 Subject Alternative Name: 
+    IP Address:192.168.122.186, DNS:embedded-base, DNS:localhost

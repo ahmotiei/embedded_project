@@ -1,0 +1,30 @@
+========================================
+SMART GUARD - TEST 1-2
+Automatic restart after SIGKILL
+========================================
+
+Current service status:
+● smart-guard-web.service - Smart Guard HTTPS web server and host telemetry receiver
+     Loaded: loaded (/etc/systemd/system/smart-guard-web.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2026-07-27 11:15:29 +0330; 2min 8s ago
+       Docs: file:/opt/smart-guard/source/smart_guard_web.c
+    Process: 1645 ExecStartPre=/bin/sh -c printf "0
+" > /run/smart-guard/person_count (code=exited, status=0/SUCCESS)
+   Main PID: 1646 (smart_guard_web)
+      Tasks: 6 (limit: 1611)
+     Memory: 1.7M
+        CPU: 1.286s
+     CGroup: /system.slice/smart-guard-web.service
+             └─1646 /opt/smart-guard/bin/smart_guard_web
+
+Jul 27 11:15:29 embedded-base systemd[1]: Starting Smart Guard HTTPS web server and host telemetry receiver...
+Jul 27 11:15:29 embedded-base systemd[1]: Started Smart Guard HTTPS web server and host telemetry receiver.
+Jul 27 11:15:29 embedded-base smart_guard_web[1646]: Smart Guard started: http=80 https=443 host=192.168.122.186 student=401102553
+Jul 27 11:15:29 embedded-base smart_guard_web[1646]: Camera receiver listening on TCP 9100
+Jul 27 11:15:29 embedded-base smart_guard_web[1646]: Temperature receiver listening on UDP 9090
+Jul 27 11:15:31 embedded-base smart_guard_web[1646]: Host camera connected
+
+Recent restart logs:
+
+API after restart:
+{"student_name":"Amir Hossein Motiei","student_id":"401102553","timestamp":"2026-07-27T11:17:37+0330","cpu_usage_percent":18.553,"memory_total_kb":1494600,"memory_available_kb":1082568,"cpu_temperature_available":true,"cpu_temperature_stale":false,"cpu_temperature_c":60.000,"persons":1}
