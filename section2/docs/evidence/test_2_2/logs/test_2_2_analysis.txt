@@ -1,0 +1,31 @@
+TEST 2-2 MEMORY LEAK ANALYSIS
+
+Test duration:
+  300 seconds
+
+Sampling interval:
+  5 seconds
+
+Workload:
+  Continuous MJPEG stream
+
+Samples:
+  60 data samples from t=0 to t=300 seconds
+
+Memory results:
+  Initial RSS: 6740 KB
+  Final RSS:   7032 KB
+  Peak RSS:    7044 KB
+  Net growth:  292 KB
+
+Stability comparison:
+  First-half average RSS:  7016.67 KB
+  Second-half average RSS: 7025.73 KB
+  Difference:               9.07 KB
+
+Conclusion:
+  The C process showed a small initial memory allocation increase,
+  followed by stable RSS near 7 MB.
+
+  No sustained memory leak pattern was detected during the
+  five-minute continuous MJPEG stream test.

@@ -1,0 +1,17 @@
+=== TEST 2-1: TEMPERATURE SUMMARY ===
+2026-07-27T21:26:37+03:30
+
+CSV line counts:
+  12 evidence/test_2_1_temperature/idle.csv
+  12 evidence/test_2_1_temperature/stream.csv
+  12 evidence/test_2_1_temperature/stream_detection.csv
+  36 total
+
+Maximum temperature table:
+mode                maximum_temperature_c
+Idle                61.000
+Stream only         78.000
+Stream + detection  58.000
+
+Generated plot:
+-rw-rw-r-- 1 amir amir 130K Jul 27 21:26 evidence/test_2_1_temperature/S2_T21_04_temperature_three_modes.png

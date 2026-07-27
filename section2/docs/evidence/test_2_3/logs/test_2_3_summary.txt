@@ -1,0 +1,32 @@
+=== TEST 2-3: 50 CONCURRENT TELEMETRY REQUESTS ===
+2026-07-27T22:05:44+03:30
+
+Configuration:
+Concurrency: 50 curl loops
+Duration: 30 seconds
+Target: GET /api/v1/telemetry
+
+Load-test summary:
+baseline_requests=20
+load_requests=966
+successful_http_200=966
+failed_requests=0
+baseline_mean_ms=32.040
+load_mean_ms=1542.485
+load_p50_ms=1568.356
+load_p95_ms=1598.459
+load_p99_ms=1634.513
+mean_latency_increase_ms=1510.446
+mean_latency_increase_percent=4714.294
+
+Worker verification:
+unique_workers=50
+minimum_requests_per_worker=19
+maximum_requests_per_worker=20
+missing_workers=[]
+
+Telemetry summary:
+
+Generated plots:
+-rw-rw-r-- 1 amir amir  59K Jul 27 22:05 evidence/test_2_3_load/S2_T23_02_latency_histogram.png
+-rw-rw-r-- 1 amir amir 119K Jul 27 22:05 evidence/test_2_3_load/S2_T23_03_telemetry_under_load.png

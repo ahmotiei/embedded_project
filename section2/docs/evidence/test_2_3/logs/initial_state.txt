@@ -1,0 +1,28 @@
+=== TEST 2-3: INITIAL STATE ===
+2026-07-27T21:58:44+03:30
+
+Configuration:
+Concurrency: 50 curl loops
+Duration: 30 seconds
+Target: GET /api/v1/telemetry
+
+C web service:
+active
+
+Swagger service:
+active
+
+Vision service:
+inactive
+
+Existing stream clients:
+none
+
+Initial telemetry:
+{
+  "cpu_temperature_c": 53,
+  "cpu_temperature_stale": false,
+  "cpu_usage_percent": 2.927,
+  "memory_available_kb": 1076484,
+  "camera_connected": true
+}

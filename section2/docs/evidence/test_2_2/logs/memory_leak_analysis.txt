@@ -1,0 +1,7 @@
+first_rss_kb=6740.0
+last_rss_kb=7032.0
+peak_rss_kb=7044.0
+growth_kb=292.0
+linear_slope_kb_per_minute=5.508
+heuristic_result=no sustained leak pattern detected
+Note: confirm the conclusion with the curve shape and a longer run if growth is borderline.

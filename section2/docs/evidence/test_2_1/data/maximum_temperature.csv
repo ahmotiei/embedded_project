@@ -1,0 +1,4 @@
+mode,maximum_temperature_c
+Idle,61.000
+Stream only,78.000
+Stream + detection,58.000

@@ -1,0 +1,36 @@
+=== TEST 2-4: FINAL RECOVERY STATE ===
+2026-07-27T22:48:47+03:30
+
+Web service:
+active
+
+Host-camera connection:
+{
+  "timestamp": "2026-07-27T22:48:46+0330",
+  "camera_connected": true,
+  "last_frame_age_seconds": 0.021,
+  "cpu_temperature_c": 49,
+  "cpu_temperature_stale": false
+}
+
+Status CSV line count:
+50 evidence/test_2_4_network_recovery/recovery_status.csv
+
+First four status rows:
+time_s,timestamp,api_reachable,camera_connected,last_frame_age_seconds,temperature_stale
+0,2026-07-27T22:44:37+03:30,true,true,0.03,false
+5,2026-07-27T22:44:42+03:30,true,true,0.018,false
+10,2026-07-27T22:44:47+03:30,true,true,0.026,false
+15,2026-07-27T22:44:52+03:30,true,true,0.016,false
+
+Last six status rows:
+219,2026-07-27T22:48:16+03:30,true,true,0.032,false
+224,2026-07-27T22:48:21+03:30,true,true,0.009,false
+229,2026-07-27T22:48:26+03:30,true,true,0.017,false
+234,2026-07-27T22:48:31+03:30,true,true,0.029,false
+239,2026-07-27T22:48:36+03:30,true,true,0.009,false
+244,2026-07-27T22:48:41+03:30,true,true,0.003,false
+
+Disconnect/reconnect log events:
+2026-07-27T22:45:10+0330 embedded-base smart_guard_web[731]: Host camera disconnected; waiting for automatic reconnect
+2026-07-27T22:47:18+0330 embedded-base smart_guard_web[731]: Host camera connected

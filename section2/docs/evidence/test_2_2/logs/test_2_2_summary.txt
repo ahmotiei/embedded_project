@@ -1,0 +1,31 @@
+=== TEST 2-2: C MEMORY DURING CONTINUOUS STREAM ===
+2026-07-27T21:45:05+03:30
+
+Test configuration:
+Duration: 300 seconds
+Sampling interval: 5 seconds
+Workload: continuous MJPEG stream
+
+C service:
+active
+
+Vision service:
+inactive
+
+Active stream clients after test:
+none
+
+CSV line count:
+61 evidence/test_2_2_memory/c_process_memory.csv
+
+Memory leak analysis:
+first_rss_kb=6740.0
+last_rss_kb=7032.0
+peak_rss_kb=7044.0
+growth_kb=292.0
+linear_slope_kb_per_minute=5.508
+heuristic_result=no sustained leak pattern detected
+Note: confirm the conclusion with the curve shape and a longer run if growth is borderline.
+
+Generated plot:
+-rw-rw-r-- 1 amir amir 94K Jul 27 21:43 evidence/test_2_2_memory/c_process_memory.png

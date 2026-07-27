@@ -1,0 +1,27 @@
+=== TEST 2-1A: IDLE END STATE ===
+2026-07-27T20:08:43+03:30
+
+Vision service:
+inactive
+
+Active curl stream clients:
+none
+
+CSV line count:
+12 evidence/test_2_1_temperature/idle.csv
+
+Last four samples:
+"210","2026-07-27T19:56:32+0330",56,0,1084300,0,true
+"240","2026-07-27T19:57:02+0330",53,0,1084596,0,true
+"270","2026-07-27T19:57:32+0330",54,0,1087416,0,true
+"300","2026-07-27T19:58:03+0330",53,0.5,1085332,0,true
+
+Final telemetry:
+{
+  "cpu_temperature_c": 53,
+  "cpu_temperature_stale": false,
+  "temperature_source": "host_sysfs_udp",
+  "cpu_usage_percent": 0.5,
+  "persons": 0,
+  "camera_connected": true
+}

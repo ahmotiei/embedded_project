@@ -1,0 +1,23 @@
+=== TEST 2-2: INITIAL STATE ===
+2026-07-27T21:37:35+03:30
+
+C service:
+active
+
+Vision service:
+inactive
+
+C process:
+    PID     ELAPSED   RSS    VSZ CMD
+    731       31:47  6740 681208 /opt/smart-guard/bin/smart_guard_web
+
+Existing stream clients:
+none
+
+Telemetry:
+{
+  "cpu_temperature_c": 54,
+  "cpu_temperature_stale": false,
+  "memory_available_kb": 1084092,
+  "camera_connected": true
+}
