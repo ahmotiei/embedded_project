@@ -688,13 +688,7 @@ static int recv_all(int fd, void *buffer, size_t size)
         ssize_t received = recv(fd, cursor, remaining, 0);
         if (received == 0) return -1;
         if (received < 0) {
-            if (errno == EINTR) continue;
-
-            /*
-             * SO_RCVTIMEO reports an expired receive timeout as
-             * EAGAIN/EWOULDBLOCK. Return to the camera receiver so it can
-             * close the stale connection and accept the host reconnect.
-             */
+            if (errno == EINTR || errno == EAGAIN || errno == EWOULDBLOCK) continue;
             return -1;
         }
         cursor += (size_t)received;
