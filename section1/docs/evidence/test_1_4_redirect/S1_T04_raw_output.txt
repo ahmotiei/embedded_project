@@ -1,0 +1,16 @@
+========================================
+SMART GUARD - TEST 1-4
+HTTP TO HTTPS REDIRECT
+========================================
+
+Test timestamp:
+2026-07-27T11:39:37+03:30
+
+HTTP response headers:
+HTTP/1.1 301 Moved Permanently
+Date: Mon, 27 Jul 2026 08:09:37 GMT
+Connection: close
+Location: https://192.168.122.186/
+Cache-Control: no-store
+Content-Length: 0
+

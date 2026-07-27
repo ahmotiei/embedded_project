@@ -1,0 +1,27 @@
+========================================
+SMART GUARD - TEST 1-6
+FINAL HTML DASHBOARD
+========================================
+
+Test timestamp:
+2026-07-27T11:55:41+03:30
+
+=== HTTPS RESPONSE STATUS ===
+HTTP_CODE=200
+CONTENT_TYPE=text/html; charset=utf-8
+REMOTE_IP=192.168.122.186
+
+=== PAGE TITLE ===
+<title>Amir Hossein Motiei - 401102553</title>
+
+=== LIVE TELEMETRY ===
+{"student_name":"Amir Hossein Motiei","student_id":"401102553","timestamp":"2026-07-27T11:55:41+0330","cpu_usage_percent":70.968,"memory_total_kb":1494600,"memory_available_kb":1078576,"cpu_temperature_available":true,"cpu_temperature_stale":false,"cpu_temperature_c":91.000,"persons":2}
+
+=== STREAM RESPONSE HEADERS ===
+HTTP/1.1 405 Method Not Allowed
+Date: Mon, 27 Jul 2026 08:25:41 GMT
+Connection: close
+Content-Type: text/plain; charset=utf-8
+Cache-Control: no-store
+Content-Length: 19
+

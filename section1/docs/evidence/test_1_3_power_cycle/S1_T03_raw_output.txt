@@ -1,0 +1,23 @@
+========================================
+SMART GUARD - TEST 1-3
+Automatic startup after power cycle
+========================================
+
+Boot timestamp:
+2026-07-27 11:28:58
+
+Current timestamp:
+2026-07-27T11:32:56+03:30
+
+=== SERVICE STATUS AFTER POWER ON ===
+SERVICE                   ACTIVE     ENABLED   
+smart-guard-web           active     enabled   
+smart-guard-vision        active     enabled   
+smart-guard-mqtt          active     enabled   
+
+=== BOOT TIME ===
+Startup finished in 3.063s (kernel) + 4.189s (userspace) = 7.253s 
+graphical.target reached after 3.584s in userspace
+
+=== TELEMETRY AFTER POWER ON ===
+{"student_name":"Amir Hossein Motiei","student_id":"401102553","timestamp":"2026-07-27T11:32:56+0330","cpu_usage_percent":52.500,"memory_total_kb":1494600,"memory_available_kb":1057608,"cpu_temperature_available":true,"cpu_temperature_stale":false,"cpu_temperature_c":63.000,"persons":1}

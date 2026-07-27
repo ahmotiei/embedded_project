@@ -1,0 +1,26 @@
+================================================
+SMART GUARD - TEST 1-1
+Boot time and automatic service startup
+================================================
+
+Date:
+2026-07-27T11:11:07+03:30
+
+Hostname:
+embedded-base
+
+=== TOTAL BOOT TIME ===
+Startup finished in 2.999s (kernel) + 3.973s (userspace) = 6.972s 
+graphical.target reached after 3.499s in userspace
+
+=== SMART GUARD SERVICE BOOT TIMES ===
+ 208ms smart-guard-web.service
+
+=== SERVICE STATUS ===
+SERVICE                        ACTIVE     ENABLED   
+smart-guard-web                active     enabled   
+smart-guard-vision             active     enabled   
+smart-guard-mqtt               active     enabled   
+
+=== TELEMETRY AFTER BOOT ===
+{"student_name":"Amir Hossein Motiei","student_id":"401102553","timestamp":"2026-07-27T11:11:07+0330","cpu_usage_percent":58.000,"memory_total_kb":1494600,"memory_available_kb":1059324,"cpu_temperature_available":true,"cpu_temperature_stale":false,"cpu_temperature_c":60.000,"persons":2}

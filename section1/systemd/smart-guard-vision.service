@@ -1,0 +1,39 @@
+[Unit]
+Description=Smart Guard person detection service
+Requires=network-online.target smart-guard-web.service
+After=network-online.target smart-guard-web.service
+
+[Service]
+Type=simple
+User=smartguard
+Group=smartguard
+
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=SMART_GUARD_STREAM_URL=https://127.0.0.1/api/v1/stream
+Environment=SMART_GUARD_PERSON_FILE=/run/smart-guard/person_count
+Environment=SMART_GUARD_VISION_INTERVAL=0.8
+Environment=SMART_GUARD_VISION_MAX_WIDTH=640
+
+ExecStart=/usr/bin/python3 -B /opt/smart-guard/vision/person_detector.py
+
+Restart=always
+RestartSec=2
+TimeoutStopSec=10
+
+Nice=10
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+
+ReadWritePaths=/run/smart-guard
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,43 @@
+[Unit]
+Description=Smart Guard MQTT telemetry client
+Wants=network-online.target
+Requires=smart-guard-web.service smart-guard-vision.service
+After=network-online.target smart-guard-web.service smart-guard-vision.service
+
+[Service]
+Type=simple
+User=smartguard
+Group=smartguard
+
+EnvironmentFile=/etc/smart-guard/mqtt.env
+ExecStart=/opt/smart-guard/bin/smart_guard_mqtt
+
+Restart=always
+RestartSec=3
+TimeoutStopSec=10
+KillSignal=SIGTERM
+
+Nice=5
+UMask=0077
+
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectHome=true
+ProtectSystem=strict
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+ProtectHostname=true
+ProtectClock=true
+RestrictSUIDSGID=true
+RestrictRealtime=true
+LockPersonality=true
+
+CapabilityBoundingSet=
+AmbientCapabilities=
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+[Install]
+WantedBy=multi-user.target
