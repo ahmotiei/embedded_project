@@ -16,7 +16,7 @@ import httpx
 from fastapi import FastAPI, Header, HTTPException, Query, Security, status
 from fastapi.responses import RedirectResponse, StreamingResponse
 from fastapi.security import APIKeyHeader
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 STUDENT_NAME = "Amir Hossein Motiei"
 STUDENT_ID = "401102553"
@@ -49,6 +49,10 @@ app = FastAPI(
 
 
 class CommandRequest(BaseModel):
+    model_config = ConfigDict(
+        json_schema_extra={"examples": [{"cmd": "ping"}, {"cmd": "reboot"}]}
+    )
+
     cmd: str = Field(
         min_length=1,
         max_length=64,
@@ -57,22 +61,59 @@ class CommandRequest(BaseModel):
     )
 
 
+class HealthResponse(BaseModel):
+    status: str = Field(examples=["ok"])
+    component: str = Field(examples=["smart_guard_c_core"])
+
+
 class PersonsResponse(BaseModel):
-    student_id: str
-    timestamp: str
-    persons: int
+    student_id: str = Field(examples=[STUDENT_ID])
+    timestamp: str = Field(examples=["2026-07-27T16:54:50+0330"])
+    persons: int = Field(ge=0, examples=[1])
+
+
+class TelemetryResponse(BaseModel):
+    student_name: str = Field(examples=[STUDENT_NAME])
+    student_id: str = Field(examples=[STUDENT_ID])
+    timestamp: str = Field(examples=["2026-07-27T16:54:50+0330"])
+    cpu_usage_percent: float = Field(ge=0, le=100, examples=[17.961])
+    memory_total_kb: int = Field(ge=0, examples=[1494600])
+    memory_free_kb: int = Field(ge=0, examples=[70076])
+    memory_available_kb: int = Field(ge=0, examples=[1037336])
+    cpu_temperature_available: bool = Field(examples=[True])
+    cpu_temperature_stale: bool = Field(examples=[False])
+    cpu_temperature_c: float | None = Field(default=None, examples=[54.0])
+    temperature_source: str = Field(examples=["host_sysfs_udp"])
+    persons: int = Field(ge=0, examples=[1])
+    camera_connected: bool = Field(examples=[True])
+    last_frame_age_seconds: float = Field(examples=[0.024])
 
 
 class HistoryRecord(BaseModel):
-    id: int
-    timestamp: str
-    persons: int
+    id: int = Field(ge=1, examples=[62])
+    timestamp: str = Field(examples=["2026-07-27T16:54:50+0330"])
+    persons: int = Field(ge=0, examples=[1])
 
 
 class HistoryResponse(BaseModel):
-    student_id: str
-    count: int
-    records: list[HistoryRecord]
+    student_id: str = Field(examples=[STUDENT_ID])
+    count: int = Field(ge=0, le=5, examples=[5])
+    records: list[HistoryRecord] = Field(max_length=5)
+
+
+class CommandResponse(BaseModel):
+    accepted: bool = Field(examples=[True])
+    cmd: str = Field(examples=["ping"])
+    status: str = Field(examples=["ok"])
+    timestamp: str | None = Field(
+        default=None,
+        description="Present for commands such as ping; omitted when not applicable.",
+        examples=["2026-07-27T16:30:35+0330"],
+    )
+
+
+class ErrorResponse(BaseModel):
+    detail: str = Field(examples=["C core is unavailable"])
 
 
 async def _json_request(
@@ -112,7 +153,18 @@ async def root() -> RedirectResponse:
     return RedirectResponse(url="/docs", status_code=status.HTTP_307_TEMPORARY_REDIRECT)
 
 
-@app.get("/health", tags=["Service"])
+@app.get(
+    "/health",
+    response_model=HealthResponse,
+    tags=["Service"],
+    summary="C core health check",
+    responses={
+        503: {
+            "model": ErrorResponse,
+            "description": "The C core service is unavailable.",
+        }
+    },
+)
 async def health() -> Any:
     return await _json_request("GET", "/health")
 
@@ -122,6 +174,12 @@ async def health() -> Any:
     response_model=PersonsResponse,
     tags=["Monitoring"],
     summary="Current person count",
+    responses={
+        503: {
+            "model": ErrorResponse,
+            "description": "The C core service is unavailable.",
+        }
+    },
 )
 async def persons() -> Any:
     """Return the current number of detected people and a live timestamp."""
@@ -130,8 +188,15 @@ async def persons() -> Any:
 
 @app.get(
     "/api/v1/telemetry",
+    response_model=TelemetryResponse,
     tags=["Monitoring"],
     summary="Live CPU, memory, and temperature telemetry",
+    responses={
+        503: {
+            "model": ErrorResponse,
+            "description": "The C core service is unavailable.",
+        }
+    },
 )
 async def telemetry() -> Any:
     """Return values sampled by C from /proc and /sys (with host sysfs fallback)."""
@@ -143,6 +208,12 @@ async def telemetry() -> Any:
     response_model=HistoryResponse,
     tags=["Monitoring"],
     summary="Last five detection events",
+    responses={
+        503: {
+            "model": ErrorResponse,
+            "description": "The C core service is unavailable.",
+        }
+    },
 )
 async def history() -> Any:
     return await _json_request("GET", "/api/v1/history")
@@ -150,9 +221,58 @@ async def history() -> Any:
 
 @app.post(
     "/api/v1/command",
+    response_model=CommandResponse,
+    response_model_exclude_none=True,
     tags=["Command"],
     summary="Execute an extensible C command",
     status_code=status.HTTP_202_ACCEPTED,
+    responses={
+        400: {
+            "model": ErrorResponse,
+            "description": "The command name is not registered in the C core.",
+            "content": {
+                "application/json": {"example": {"detail": "unknown command"}}
+            },
+        },
+        401: {
+            "model": ErrorResponse,
+            "description": "X-Command-Token is missing or invalid.",
+            "content": {
+                "application/json": {
+                    "example": {"detail": "invalid or missing X-Command-Token"}
+                }
+            },
+        },
+        500: {
+            "model": ErrorResponse,
+            "description": "The C core recognized the command but execution failed.",
+            "content": {
+                "application/json": {
+                    "example": {"detail": "cannot schedule reboot"}
+                }
+            },
+        },
+        503: {
+            "model": ErrorResponse,
+            "description": "The C core is unavailable or the command token is not configured.",
+            "content": {
+                "application/json": {
+                    "examples": {
+                        "c_core_unavailable": {
+                            "summary": "C core unavailable",
+                            "value": {"detail": "C core is unavailable"},
+                        },
+                        "token_not_configured": {
+                            "summary": "Command token not configured",
+                            "value": {
+                                "detail": "SMART_GUARD_COMMAND_TOKEN is not configured"
+                            },
+                        },
+                    }
+                }
+            },
+        },
+    },
 )
 async def command(
     request: CommandRequest,
@@ -178,7 +298,11 @@ async def command(
         200: {
             "description": "multipart/x-mixed-replace MJPEG stream",
             "content": {"multipart/x-mixed-replace": {}},
-        }
+        },
+        503: {
+            "model": ErrorResponse,
+            "description": "The C stream service is unavailable.",
+        },
     },
 )
 async def stream(
