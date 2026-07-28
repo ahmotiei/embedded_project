@@ -1,0 +1,33 @@
+=== Test 3-4: broker three-minute outage ===
+
+stop_requested_at=2026-07-28T17:32:38+03:30
+stopped_at=2026-07-28T17:32:42+03:30
+broker_state=inactive
+○ mosquitto.service - Mosquitto MQTT Broker
+     Loaded: loaded (/usr/lib/systemd/system/mosquitto.service; enabled; preset: enabled)
+     Active: inactive (dead) since Tue 2026-07-28 17:32:42 +0330; 13ms ago
+   Duration: 3h 48min 30.461s
+       Docs: man:mosquitto.conf(5)
+             man:mosquitto(8)
+    Process: 13501 ExecStartPre=/bin/mkdir -m 740 -p /var/log/mosquitto (code=exited, status=0/SUCCESS)
+    Process: 13503 ExecStartPre=/bin/chown mosquitto:mosquitto /var/log/mosquitto (code=exited, status=0/SUCCESS)
+    Process: 13505 ExecStartPre=/bin/mkdir -m 740 -p /run/mosquitto (code=exited, status=0/SUCCESS)
+    Process: 13507 ExecStartPre=/bin/chown mosquitto:mosquitto /run/mosquitto (code=exited, status=0/SUCCESS)
+    Process: 13509 ExecStart=/usr/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf (code=exited, status=0/SUCCESS)
+   Main PID: 13509 (code=exited, status=0/SUCCESS)
+
+sleeping_for=180_seconds
+
+start_requested_at=2026-07-28T17:35:42+03:30
+started_at=2026-07-28T17:35:42+03:30
+broker_state=active
+State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess
+LISTEN 0      100          0.0.0.0:1883      0.0.0.0:*    users:(("mosquitto",pid=26145,fd=5))
+
+waiting_for_vm_client_reconnect=12_seconds
+
+=== Retained status after broker recovery ===
+status/401102553/home {"student_id":"401102553","status":"offline-unexpected","timestamp":"2026-07-28T17:26:29+0330"}
+
+vm_mqtt_service=active
+completed_at=2026-07-28T17:35:55+03:30

@@ -1,0 +1,2 @@
+exit_code=255
+PASS: unauthorized SSH login failed.

@@ -1,0 +1,12 @@
+# Replace the username only when you intentionally choose another account.
+user smartguard_401102553
+topic readwrite telemetry/401102553/home
+topic readwrite persons/401102553/home
+topic readwrite status/401102553/home
+
+# Optional observer for the demonstration computer. Create its password
+# separately if you enable this block.
+# user smartguard_observer
+# topic read telemetry/401102553/home
+# topic read persons/401102553/home
+# topic read status/401102553/home

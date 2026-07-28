@@ -1,0 +1,3 @@
+Spoof detections: 2/30
+Spoof success rate: 6.67%
+Interpretation: HOG/SVM detects appearance, not liveness. A printed/displayed person can therefore be classified as a real person. Recommended defenses: temporal motion/challenge checks, face anti-spoofing, depth/IR sensing, or multi-frame optical-flow consistency.

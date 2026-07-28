@@ -1,0 +1,5 @@
+sample=1 host_ms=1785248887280 vm_ms=1785248887526 approximate_delta_ms=246
+sample=2 host_ms=1785248888504 vm_ms=1785248888756 approximate_delta_ms=252
+sample=3 host_ms=1785248889734 vm_ms=1785248889978 approximate_delta_ms=244
+sample=4 host_ms=1785248890957 vm_ms=1785248891232 approximate_delta_ms=275
+sample=5 host_ms=1785248892211 vm_ms=1785248892464 approximate_delta_ms=253

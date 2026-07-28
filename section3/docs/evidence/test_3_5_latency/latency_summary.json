@@ -1,0 +1,8 @@
+{
+  "samples": 10,
+  "mean_latency_ms": 124.522,
+  "sample_standard_deviation_ms": 56.191,
+  "minimum_ms": 53.299,
+  "maximum_ms": 234.249,
+  "clock_note": "Host and VM clocks must be synchronized (systemd-timesyncd/NTP)."
+}
