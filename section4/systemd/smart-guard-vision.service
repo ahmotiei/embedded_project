@@ -1,0 +1,38 @@
+[Unit]
+Description=Smart Guard Section 4 adaptive person detection and annotated-frame relay
+Requires=smart-guard-web.service
+After=network-online.target smart-guard-web.service
+
+[Service]
+Type=simple
+User=smartguard
+Group=smartguard
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+EnvironmentFile=/etc/smart-guard/section4.env
+ExecStart=/usr/bin/python3 -B /opt/smart-guard/section4/vision/person_detector.py
+Restart=always
+RestartSec=2
+TimeoutStopSec=12
+Nice=8
+UMask=0027
+
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectHome=true
+ProtectSystem=strict
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+RestrictRealtime=true
+LockPersonality=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+ReadWritePaths=/run/smart-guard
+
+[Install]
+WantedBy=multi-user.target
