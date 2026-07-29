@@ -1,0 +1,5 @@
+===== MQTT ALARM QoS 1 PUBLISH =====
+Jul 29 20:59:40 embedded-base smart_guard_notifier[7225]: MQTT queued QoS1 topic=alarm/401102553/home mid=2243 payload={"student_id":"401102553","event":"guard_intrusion","published_at":"2026-07-29T20:59:40+0330","event_id":"1785346178495435742","timestamp":"2026-07-29T20:59:38.492+03:30","persons":1,"vision_fps":30.073,"temperature_available":true,"temperature_c":68,"message":"human detected while armed"}
+
+===== MQTT PUBACK =====
+Jul 29 20:59:40 embedded-base smart_guard_notifier[7225]: MQTT QoS acknowledgement mid=2243
