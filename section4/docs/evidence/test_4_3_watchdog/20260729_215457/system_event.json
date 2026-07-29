@@ -1,0 +1,1 @@
+{"event_id":"1785349536188020223","type":"camera_tamper","timestamp":"2026-07-29T21:55:36+0330","message":"No new processed camera frame for more than the configured timeout","service":"smart-guard-vision.service","frame_age_seconds":31.000}

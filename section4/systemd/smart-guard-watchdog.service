@@ -1,0 +1,34 @@
+[Unit]
+Description=Smart Guard Section 4 processed-frame software watchdog
+Wants=smart-guard-vision.service
+After=smart-guard-web.service smart-guard-vision.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+EnvironmentFile=/etc/smart-guard/section4.env
+ExecStart=/opt/smart-guard/bin/smart_guard_watchdog
+Restart=always
+RestartSec=3
+TimeoutStopSec=10
+UMask=0022
+
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectHome=true
+ProtectSystem=strict
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectHostname=true
+ProtectClock=true
+RestrictSUIDSGID=true
+RestrictRealtime=true
+LockPersonality=true
+RestrictAddressFamilies=AF_UNIX
+ReadWritePaths=/run/smart-guard
+
+[Install]
+WantedBy=multi-user.target

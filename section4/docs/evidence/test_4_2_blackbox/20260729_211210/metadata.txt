@@ -1,0 +1,4 @@
+key                     value
+----------------------  -----
+total_detection_events  201  
+total_persons_detected  205  

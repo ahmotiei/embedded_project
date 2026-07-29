@@ -1,0 +1,31 @@
+[Unit]
+Description=Smart Guard Section 4 thin FastAPI Swagger gateway
+Wants=network-online.target
+After=network-online.target smart-guard-web.service
+Requires=smart-guard-web.service
+
+[Service]
+Type=simple
+User=smartguard
+Group=smartguard
+WorkingDirectory=/opt/smart-guard/section4/swagger
+EnvironmentFile=/etc/smart-guard/section2.env
+EnvironmentFile=/etc/smart-guard/section4.env
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/opt/smart-guard/section4/venv/bin/uvicorn swagger_api:app --host 0.0.0.0 --port 8443 --ssl-keyfile /etc/smart-guard/tls/server.key --ssl-certfile /etc/smart-guard/tls/server.crt --proxy-headers --no-server-header
+Restart=always
+RestartSec=2
+TimeoutStopSec=15
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+
+[Install]
+WantedBy=multi-user.target
