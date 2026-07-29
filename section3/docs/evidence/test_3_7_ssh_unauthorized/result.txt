@@ -1,0 +1,16 @@
+=== TEST 3-7 — UNAUTHORIZED SSH LOGIN ===
+Target: root@192.168.122.186
+
+debug1: Connecting to 192.168.122.186 [192.168.122.186] port 22.
+debug1: identity file ./test_3_7_ssh_auth_20260728_182741/unauthorized_test_key type 3
+debug1: identity file ./test_3_7_ssh_auth_20260728_182741/unauthorized_test_key-cert type -1
+debug1: Authenticating to 192.168.122.186:22 as 'root'
+debug1: Offering public key: ./test_3_7_ssh_auth_20260728_182741/unauthorized_test_key ED25519 SHA256:apQZSdAijT1oAWmpyGv2HO12A/WTFVfSXS1DW1izg3U explicit
+root@192.168.122.186: Permission denied (publickey,password).
+exit_code=255
+PASS: unauthorized SSH login failed.
+test_script_exit_code=0
+
+RESULT: PASS
+The temporary unauthorized key was rejected.
+Root SSH login was not established.

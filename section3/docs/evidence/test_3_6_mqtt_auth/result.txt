@@ -1,0 +1,3 @@
+anonymous_exit_code=5
+wrong_credentials_exit_code=5
+PASS: anonymous and wrong-password MQTT attempts failed.
