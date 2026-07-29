@@ -45,6 +45,9 @@
 #define DEFAULT_BLACKBOX_CAPACITY 1000
 #define DEFAULT_THERMAL_HIGH_C 75.0
 #define DEFAULT_THERMAL_HYSTERESIS_C 5.0
+#define DEFAULT_THERMAL_ENTER_SAMPLES 3
+#define DEFAULT_THERMAL_EXIT_SAMPLES 5
+#define DEFAULT_THERMAL_MIN_DWELL_SECONDS 60
 #define DEFAULT_THERMAL_MAX_FPS 4
 #define DEFAULT_THERMAL_DETECTION_WIDTH 320
 #define DEFAULT_THERMAL_OUTPUT_WIDTH 480
@@ -1318,6 +1321,12 @@ int main(void)
                                            DEFAULT_THERMAL_HIGH_C, 20.0, 150.0);
     double thermal_hysteresis_c = get_env_double("SMART_GUARD_THERMAL_HYSTERESIS_C",
                                                  DEFAULT_THERMAL_HYSTERESIS_C, 1.0, 30.0);
+    int thermal_enter_samples = get_env_int("SMART_GUARD_THERMAL_ENTER_SAMPLES",
+                                              DEFAULT_THERMAL_ENTER_SAMPLES, 1, 120);
+    int thermal_exit_samples = get_env_int("SMART_GUARD_THERMAL_EXIT_SAMPLES",
+                                             DEFAULT_THERMAL_EXIT_SAMPLES, 1, 120);
+    int thermal_min_dwell_seconds = get_env_int("SMART_GUARD_THERMAL_MIN_DWELL_SECONDS",
+                                                 DEFAULT_THERMAL_MIN_DWELL_SECONDS, 0, 3600);
     int thermal_max_fps = get_env_int("SMART_GUARD_THERMAL_MAX_FPS",
                                       DEFAULT_THERMAL_MAX_FPS, 1, 60);
     int thermal_detection_width = get_env_int("SMART_GUARD_THERMAL_DETECTION_WIDTH",
@@ -1354,6 +1363,9 @@ int main(void)
     unsigned long long last_alarm_email_event;
     unsigned long long last_system_event;
     bool thermal_active;
+    int thermal_high_streak = 0;
+    int thermal_low_streak = 0;
+    long long last_thermal_transition_ms = 0LL;
     telemetry_summary_t latest_telemetry;
 
     memset(&latest_telemetry, 0, sizeof(latest_telemetry));
@@ -1463,13 +1475,14 @@ int main(void)
             "Broker: %s:%d MQTT=%s\nTelemetry: %s\nEvent: %s\nSystem event: %s\n"
             "Topics: %s, %s, %s, %s\nEmail=%s debounce=%ds\n"
             "Guard state: %s\nBlack box: %s capacity=%d\n"
-            "Thermal: high=%.1fC hysteresis=%.1fC profile=%dfps/%dpx output=%dpx\n",
+            "Thermal: high=%.1fC hysteresis=%.1fC confirm=%d-high/%d-low dwell=%ds profile=%dfps/%dpx output=%dpx\n",
             broker_host, broker_port, mqtt_enabled ? "enabled" : "disabled",
             telemetry_url, event_file, system_event_file,
             telemetry_topic, persons_topic, alarm_topic, g_status_topic,
             email_enabled ? "enabled" : "disabled", debounce_seconds,
             guard_state_file, database_file, blackbox_capacity,
             thermal_high_c, thermal_hysteresis_c,
+            thermal_enter_samples, thermal_exit_samples, thermal_min_dwell_seconds,
             thermal_max_fps, thermal_detection_width, thermal_output_width);
     fflush(stdout);
 
@@ -1493,16 +1506,42 @@ int main(void)
 
                     if (telemetry.temperature_available) {
                         bool next_thermal = thermal_active;
-                        if (!thermal_active && telemetry.temperature_c >= thermal_high_c) {
+                        const double thermal_low_c = thermal_high_c - thermal_hysteresis_c;
+                        const bool dwell_elapsed =
+                            last_thermal_transition_ms == 0LL ||
+                            now_ms - last_thermal_transition_ms >=
+                                (long long)thermal_min_dwell_seconds * 1000LL;
+
+                        if (telemetry.temperature_c >= thermal_high_c) {
+                            if (thermal_high_streak < thermal_enter_samples) {
+                                thermal_high_streak++;
+                            }
+                            thermal_low_streak = 0;
+                        } else if (telemetry.temperature_c <= thermal_low_c) {
+                            if (thermal_low_streak < thermal_exit_samples) {
+                                thermal_low_streak++;
+                            }
+                            thermal_high_streak = 0;
+                        } else {
+                            thermal_high_streak = 0;
+                            thermal_low_streak = 0;
+                        }
+
+                        if (!thermal_active && dwell_elapsed &&
+                            thermal_high_streak >= thermal_enter_samples) {
                             next_thermal = true;
-                        } else if (thermal_active &&
-                                   telemetry.temperature_c <= thermal_high_c - thermal_hysteresis_c) {
+                        } else if (thermal_active && dwell_elapsed &&
+                                   thermal_low_streak >= thermal_exit_samples) {
                             next_thermal = false;
                         }
+
                         if (next_thermal != thermal_active) {
                             char subject[512];
                             char body[2048];
                             thermal_active = next_thermal;
+                            thermal_high_streak = 0;
+                            thermal_low_streak = 0;
+                            last_thermal_transition_ms = now_ms;
                             if (write_boolean_state(thermal_state_file, thermal_active) != 0) {
                                 fprintf(stderr, "Cannot persist thermal state: %s\n", strerror(errno));
                             }
