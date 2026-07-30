@@ -1,5 +1,5 @@
 condition   expected_persons  correct_samples  total_samples  accuracy_percent
-daylight    1                 13               20             65.00
-artificial  1                 19               20             95.00
-low_light   1                 7                20             35.00
-backlight   1                 9                20             45.00
+daylight    1                 20               20             100.00
+artificial  1                 20               20             100.00
+low_light   1                 20               20             100.00
+backlight   1                 20               20             100.00

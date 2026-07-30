@@ -1,4 +1,4 @@
 requested_resolution  actual_resolution  expected_persons  samples  accuracy_percent  mean_fps  max_cpu_temp_c  mean_rss_kb
-320x240               320x240            1                 60       36.67             30.061    83              148608.0
-640x480               640x480            1                 60       61.67             12.920    85              154407.2
-1280x720              1280x720           1                 60       66.67             16.438    78              158716.8
+320x240               320x240            1                 60       100.00            30.064    94              226630.7
+640x480               640x480            1                 60       100.00            30.084    94              226289.1
+1280x720              1280x720           1                 60       100.00            29.845    96              239224.5

@@ -1,3 +1,0 @@
-320x240 final: actual=320x240, FPS=30.087, persons=0, temp=62 C, RSS=148608 KB, correct=0
-640x480 final: actual=640x480, FPS=12.902, persons=1, temp=68 C, RSS=154416 KB, correct=1
-1280x720 final: actual=1280x720, FPS=16.378, persons=0, temp=68 C, RSS=157064 KB, correct=0
