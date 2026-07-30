@@ -1,80 +1,80 @@
-Jul 28 15:19:31 embedded-base python3[6533]: [vision] frame persons=1 fps=12.78 processing_ms=75.2
-Jul 28 15:19:31 embedded-base python3[6533]: [vision] frame persons=1 fps=12.78 processing_ms=75.7
-Jul 28 15:19:31 embedded-base python3[6533]: [vision] frame persons=1 fps=12.78 processing_ms=75.2
-Jul 28 15:19:31 embedded-base python3[6533]: [vision] frame persons=1 fps=12.78 processing_ms=75.1
-Jul 28 15:19:31 embedded-base python3[6533]: [vision] frame persons=1 fps=12.78 processing_ms=75.1
-Jul 28 15:19:31 embedded-base python3[6533]: [vision] frame persons=1 fps=12.70 processing_ms=89.4
-Jul 28 15:19:31 embedded-base python3[6533]: [vision] frame persons=1 fps=12.70 processing_ms=75.3
-Jul 28 15:19:31 embedded-base python3[6533]: [vision] frame persons=0 fps=12.77 processing_ms=75.2
-Jul 28 15:19:31 embedded-base python3[6533]: [vision] frame persons=0 fps=12.78 processing_ms=74.9
-Jul 28 15:19:31 embedded-base python3[6533]: [vision] frame persons=0 fps=12.78 processing_ms=75.0
-Jul 28 15:19:31 embedded-base python3[6533]: [vision] new detection event id=1785239371935826770 persons=1 snapshot=/run/smart-guard/events/event_1785239371935826770.jpg
-Jul 28 15:19:31 embedded-base python3[6533]: [vision] frame persons=1 fps=12.78 processing_ms=75.9
-Jul 28 15:19:32 embedded-base python3[6533]: [vision] frame persons=0 fps=12.78 processing_ms=75.1
-Jul 28 15:19:32 embedded-base python3[6533]: [vision] frame persons=0 fps=12.78 processing_ms=75.0
-Jul 28 15:19:32 embedded-base python3[6533]: [vision] frame persons=0 fps=12.78 processing_ms=75.3
-Jul 28 15:19:32 embedded-base python3[6533]: [vision] new detection event id=1785239372245428375 persons=1 snapshot=/run/smart-guard/events/event_1785239372245428375.jpg
-Jul 28 15:19:32 embedded-base python3[6533]: [vision] frame persons=1 fps=12.78 processing_ms=76.1
-Jul 28 15:19:32 embedded-base python3[6533]: [vision] frame persons=0 fps=12.78 processing_ms=75.0
-Jul 28 15:19:32 embedded-base python3[6533]: [vision] frame persons=1 fps=12.78 processing_ms=75.7
-Jul 28 15:19:32 embedded-base python3[6533]: [vision] frame persons=0 fps=12.78 processing_ms=75.3
-Jul 28 15:19:32 embedded-base python3[6533]: [vision] frame persons=0 fps=12.65 processing_ms=98.4
-Jul 28 15:19:32 embedded-base python3[6533]: [vision] new detection event id=1785239372656001261 persons=1 snapshot=/run/smart-guard/events/event_1785239372656001261.jpg
-Jul 28 15:19:32 embedded-base python3[6533]: [vision] frame persons=1 fps=12.65 processing_ms=76.2
-Jul 28 15:19:32 embedded-base python3[6533]: [vision] frame persons=0 fps=12.64 processing_ms=75.4
-Jul 28 15:19:32 embedded-base python3[6533]: [vision] frame persons=0 fps=12.71 processing_ms=75.4
-Jul 28 15:19:32 embedded-base python3[6533]: [vision] frame persons=0 fps=12.71 processing_ms=75.0
-Jul 28 15:19:32 embedded-base python3[6533]: [vision] frame persons=0 fps=12.71 processing_ms=75.2
-Jul 28 15:19:33 embedded-base python3[6533]: [vision] frame persons=0 fps=12.71 processing_ms=76.4
-Jul 28 15:19:33 embedded-base python3[6533]: [vision] new detection event id=1785239373121872216 persons=1 snapshot=/run/smart-guard/events/event_1785239373121872216.jpg
-Jul 28 15:19:33 embedded-base python3[6533]: [vision] frame persons=1 fps=12.71 processing_ms=76.0
-Jul 28 15:19:33 embedded-base python3[6533]: [vision] frame persons=0 fps=12.70 processing_ms=75.4
-Jul 28 15:19:33 embedded-base python3[6533]: [vision] frame persons=1 fps=12.71 processing_ms=75.2
-Jul 28 15:19:33 embedded-base python3[6533]: [vision] frame persons=1 fps=12.71 processing_ms=75.2
-Jul 28 15:19:33 embedded-base python3[6533]: [vision] frame persons=1 fps=12.71 processing_ms=75.0
-Jul 28 15:19:33 embedded-base python3[6533]: [vision] frame persons=1 fps=12.71 processing_ms=75.2
-Jul 28 15:19:33 embedded-base python3[6533]: [vision] frame persons=1 fps=12.65 processing_ms=85.3
-Jul 28 15:19:33 embedded-base python3[6533]: [vision] frame persons=1 fps=12.62 processing_ms=80.9
-Jul 28 15:19:33 embedded-base python3[6533]: [vision] frame persons=0 fps=12.62 processing_ms=75.2
-Jul 28 15:19:33 embedded-base python3[6533]: [vision] frame persons=1 fps=12.70 processing_ms=75.1
-Jul 28 15:19:33 embedded-base python3[6533]: [vision] frame persons=1 fps=12.70 processing_ms=75.1
-Jul 28 15:19:33 embedded-base python3[6533]: [vision] frame persons=1 fps=12.70 processing_ms=75.1
-Jul 28 15:19:34 embedded-base python3[6533]: [vision] frame persons=0 fps=12.70 processing_ms=74.9
-Jul 28 15:19:34 embedded-base python3[6533]: [vision] frame persons=0 fps=12.70 processing_ms=75.1
-Jul 28 15:19:34 embedded-base python3[6533]: [vision] new detection event id=1785239374220513219 persons=1 snapshot=/run/smart-guard/events/event_1785239374220513219.jpg
-Jul 28 15:19:34 embedded-base python3[6533]: [vision] frame persons=1 fps=12.69 processing_ms=76.7
-Jul 28 15:19:34 embedded-base python3[6533]: [vision] frame persons=0 fps=12.69 processing_ms=75.0
-Jul 28 15:19:34 embedded-base python3[6533]: [vision] frame persons=0 fps=12.69 processing_ms=75.7
-Jul 28 15:19:34 embedded-base python3[6533]: [vision] frame persons=0 fps=12.69 processing_ms=75.2
-Jul 28 15:19:34 embedded-base python3[6533]: [vision] frame persons=0 fps=12.69 processing_ms=75.1
-Jul 28 15:19:34 embedded-base python3[6533]: [vision] frame persons=0 fps=12.69 processing_ms=75.1
-Jul 28 15:19:34 embedded-base python3[6533]: [vision] frame persons=0 fps=12.62 processing_ms=89.1
-Jul 28 15:19:34 embedded-base python3[6533]: [vision] new detection event id=1785239374776329442 persons=1 snapshot=/run/smart-guard/events/event_1785239374776329442.jpg
-Jul 28 15:19:34 embedded-base python3[6533]: [vision] frame persons=1 fps=12.62 processing_ms=76.2
-Jul 28 15:19:34 embedded-base python3[6533]: [vision] frame persons=1 fps=12.74 processing_ms=75.1
-Jul 28 15:19:34 embedded-base python3[6533]: [vision] frame persons=0 fps=12.74 processing_ms=75.0
-Jul 28 15:19:35 embedded-base python3[6533]: [vision] frame persons=0 fps=12.74 processing_ms=76.5
-Jul 28 15:19:35 embedded-base python3[6533]: [vision] frame persons=0 fps=12.75 processing_ms=75.2
-Jul 28 15:19:35 embedded-base python3[6533]: [vision] new detection event id=1785239375164177958 persons=1 snapshot=/run/smart-guard/events/event_1785239375164177958.jpg
-Jul 28 15:19:35 embedded-base python3[6533]: [vision] frame persons=1 fps=12.75 processing_ms=75.9
-Jul 28 15:19:35 embedded-base python3[6533]: [vision] frame persons=1 fps=12.73 processing_ms=76.9
-Jul 28 15:19:35 embedded-base python3[6533]: [vision] frame persons=0 fps=12.74 processing_ms=75.1
-Jul 28 15:19:35 embedded-base python3[6533]: [vision] frame persons=0 fps=12.74 processing_ms=75.0
-Jul 28 15:19:35 embedded-base python3[6533]: [vision] frame persons=0 fps=12.75 processing_ms=75.1
-Jul 28 15:19:35 embedded-base python3[6533]: [vision] new detection event id=1785239375551409405 persons=1 snapshot=/run/smart-guard/events/event_1785239375551409405.jpg
-Jul 28 15:19:35 embedded-base python3[6533]: [vision] frame persons=1 fps=12.75 processing_ms=75.9
-Jul 28 15:19:35 embedded-base python3[6533]: [vision] frame persons=1 fps=12.75 processing_ms=75.9
-Jul 28 15:19:35 embedded-base python3[6533]: [vision] frame persons=1 fps=12.66 processing_ms=91.0
-Jul 28 15:19:35 embedded-base python3[6533]: [vision] frame persons=0 fps=12.66 processing_ms=75.2
-Jul 28 15:19:35 embedded-base python3[6533]: [vision] frame persons=1 fps=12.72 processing_ms=75.4
-Jul 28 15:19:35 embedded-base python3[6533]: [vision] frame persons=1 fps=12.75 processing_ms=75.2
-Jul 28 15:19:36 embedded-base python3[6533]: [vision] frame persons=1 fps=12.75 processing_ms=75.7
-Jul 28 15:19:36 embedded-base python3[6533]: [vision] frame persons=1 fps=12.75 processing_ms=75.3
-Jul 28 15:19:36 embedded-base python3[6533]: [vision] frame persons=1 fps=12.75 processing_ms=75.3
-Jul 28 15:19:36 embedded-base python3[6533]: [vision] frame persons=0 fps=12.75 processing_ms=75.3
-Jul 28 15:19:36 embedded-base python3[6533]: [vision] frame persons=0 fps=12.75 processing_ms=75.3
-Jul 28 15:19:36 embedded-base python3[6533]: [vision] frame persons=0 fps=12.75 processing_ms=75.6
-Jul 28 15:19:36 embedded-base python3[6533]: [vision] new detection event id=1785239376494592074 persons=1 snapshot=/run/smart-guard/events/event_1785239376494592074.jpg
-Jul 28 15:19:36 embedded-base python3[6533]: [vision] frame persons=1 fps=12.75 processing_ms=75.9
-Jul 28 15:19:36 embedded-base python3[6533]: [vision] frame persons=1 fps=12.75 processing_ms=75.3
-Jul 28 15:19:36 embedded-base python3[6533]: [vision] frame persons=0 fps=12.75 processing_ms=75.7
+Jul 30 18:19:21 embedded-base python3[3263]: [vision] frame persons=1 fps=30.01 mode=normal processing_ms=25.2
+Jul 30 18:19:21 embedded-base python3[3263]: [vision] frame persons=1 fps=30.13 mode=normal processing_ms=23.5
+Jul 30 18:19:21 embedded-base python3[3263]: [vision] frame persons=1 fps=29.97 mode=normal processing_ms=25.2
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.03 mode=normal processing_ms=25.3
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.14 mode=normal processing_ms=23.4
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=29.97 mode=normal processing_ms=24.8
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=29.99 mode=normal processing_ms=25.6
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.12 mode=normal processing_ms=23.6
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.08 mode=normal processing_ms=25.4
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.01 mode=normal processing_ms=25.1
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.13 mode=normal processing_ms=23.3
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.10 mode=normal processing_ms=25.3
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.02 mode=normal processing_ms=24.8
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.12 mode=normal processing_ms=23.4
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.26 mode=normal processing_ms=25.4
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.31 mode=normal processing_ms=24.6
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.25 mode=normal processing_ms=23.3
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=29.68 mode=normal processing_ms=40.5
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=29.61 mode=normal processing_ms=28.6
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=29.92 mode=normal processing_ms=24.4
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.04 mode=normal processing_ms=26.2
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.13 mode=normal processing_ms=25.0
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.17 mode=normal processing_ms=23.5
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.09 mode=normal processing_ms=25.5
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.02 mode=normal processing_ms=25.8
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.15 mode=normal processing_ms=23.1
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.09 mode=normal processing_ms=25.0
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.04 mode=normal processing_ms=25.3
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.13 mode=normal processing_ms=23.1
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.08 mode=normal processing_ms=25.2
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.01 mode=normal processing_ms=25.8
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.15 mode=normal processing_ms=23.3
+Jul 30 18:19:22 embedded-base python3[3263]: [vision] frame persons=1 fps=30.07 mode=normal processing_ms=25.4
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.00 mode=normal processing_ms=26.1
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.14 mode=normal processing_ms=23.0
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.10 mode=normal processing_ms=25.2
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.01 mode=normal processing_ms=25.6
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.04 mode=normal processing_ms=22.9
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.09 mode=normal processing_ms=25.1
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.02 mode=normal processing_ms=25.4
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.15 mode=normal processing_ms=23.5
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.09 mode=normal processing_ms=24.7
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.02 mode=normal processing_ms=25.4
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.16 mode=normal processing_ms=23.4
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.08 mode=normal processing_ms=24.7
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.02 mode=normal processing_ms=25.6
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.64 mode=normal processing_ms=23.4
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.42 mode=normal processing_ms=24.5
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.07 mode=normal processing_ms=29.9
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=29.79 mode=normal processing_ms=36.1
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=29.97 mode=normal processing_ms=26.5
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.01 mode=normal processing_ms=25.7
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.15 mode=normal processing_ms=23.6
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=29.98 mode=normal processing_ms=24.7
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.02 mode=normal processing_ms=25.2
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.13 mode=normal processing_ms=23.4
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=29.97 mode=normal processing_ms=24.6
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.02 mode=normal processing_ms=25.3
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.15 mode=normal processing_ms=23.5
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.10 mode=normal processing_ms=25.0
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.03 mode=normal processing_ms=24.8
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.14 mode=normal processing_ms=23.4
+Jul 30 18:19:23 embedded-base python3[3263]: [vision] frame persons=1 fps=30.09 mode=normal processing_ms=25.9
+Jul 30 18:19:24 embedded-base python3[3263]: [vision] frame persons=1 fps=30.02 mode=normal processing_ms=24.8
+Jul 30 18:19:24 embedded-base python3[3263]: [vision] frame persons=1 fps=30.14 mode=normal processing_ms=23.4
+Jul 30 18:19:24 embedded-base python3[3263]: [vision] frame persons=1 fps=30.11 mode=normal processing_ms=24.9
+Jul 30 18:19:24 embedded-base python3[3263]: [vision] frame persons=1 fps=30.02 mode=normal processing_ms=24.8
+Jul 30 18:19:24 embedded-base python3[3263]: [vision] frame persons=1 fps=30.13 mode=normal processing_ms=23.4
+Jul 30 18:19:24 embedded-base python3[3263]: [vision] frame persons=1 fps=30.10 mode=normal processing_ms=25.0
+Jul 30 18:19:24 embedded-base python3[3263]: [vision] frame persons=1 fps=29.92 mode=normal processing_ms=24.6
+Jul 30 18:19:24 embedded-base python3[3263]: [vision] frame persons=1 fps=30.13 mode=normal processing_ms=23.3
+Jul 30 18:19:24 embedded-base python3[3263]: [vision] frame persons=1 fps=30.09 mode=normal processing_ms=25.1
+Jul 30 18:19:24 embedded-base python3[3263]: [vision] frame persons=1 fps=29.91 mode=normal processing_ms=24.6
+Jul 30 18:19:24 embedded-base python3[3263]: [vision] frame persons=1 fps=30.13 mode=normal processing_ms=23.2
+Jul 30 18:19:24 embedded-base python3[3263]: [vision] frame persons=1 fps=30.10 mode=normal processing_ms=24.9
+Jul 30 18:19:24 embedded-base python3[3263]: [vision] frame persons=1 fps=30.01 mode=normal processing_ms=25.6
+Jul 30 18:19:24 embedded-base python3[3263]: [vision] frame persons=1 fps=30.13 mode=normal processing_ms=23.0
+Jul 30 18:19:24 embedded-base python3[3263]: [vision] frame persons=1 fps=30.24 mode=normal processing_ms=25.0
+Jul 30 18:19:24 embedded-base python3[3263]: [vision] frame persons=1 fps=30.41 mode=normal processing_ms=25.4
+Jul 30 18:19:24 embedded-base python3[3263]: [vision] frame persons=1 fps=30.25 mode=normal processing_ms=23.0
